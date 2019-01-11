@@ -1,14 +1,19 @@
 
+import copy
+import plus_self
+from time import *
+
 print(str(2333))
 print(int('1')+2332)
-print(float(1.2)+2331.8)
+print(float('1.2')+2331.8)  # int将str转为int;str将int转为str
+# str之间可以用+连接输出，中间没有空格;使用','可以进行多输出，之间用空格隔开
 print('-----------------------------')
 
 print(8//2)
 print('-----------------------------')
 
 a, b, c = 1+1, 2, 3
-print(a, b, c)
+print(a, b, c, '\n\n')  # 输出
 print('-----------------------------')
 
 while a < 5:
@@ -36,10 +41,15 @@ else:
     print('y max')
 print('-----------------------------')
 
+
 def fuction():
+    #可以设置缺省值
+    #函数调用时可以指定复制，使用语句‘实参=形参’
     global fuck
     fuck = 'fuck'
     return 'you'
+
+
 you = fuction()
 print(fuck, you)
 print('-----------------------------')
@@ -47,18 +57,18 @@ print('-----------------------------')
 file = open('file.txt', 'w')
 file.write(you)
 file.close()
-print('-----------------------------')
+# print('-----------------------------')
 
 file = open('file.txt', 'a')
-file.write('\nguojiang\nguojiang\naaaaaa')
+file.write('\nemmm\nemmm\naaaaaa')
 file.close()
-print('-----------------------------')
+# print('-----------------------------')
 
 file = open('file.txt', 'r')
 content = file.read()
 print(content)
 file.close()
-print('-----------------------------')
+# print('-----------------------------')
 
 file = open('file.txt', 'r')
 content = file.readlines()
@@ -68,11 +78,11 @@ print('-----------------------------')
 # class
 
 #score = input('show me your score: ')
-#if score > '100':
+# if score > '100':
 #    print('woc')
-#if score <= '100':
+# if score <= '100':
 #    print('2333')
-#print('-----------------------------')
+# print('-----------------------------')
 
 tuple_a = (1, 2257, 57)
 list_a = [54, 545, 5455]
@@ -99,13 +109,11 @@ dic1['orange'] = 20
 print(dic1)
 print('-----------------------------')
 
-from time import *
 # import time as t
 # from time import localtime, time
 print(localtime(), time())
 print('-----------------------------')
 
-import plus_self
 print(plus_self.plus(5, 5))
 print('-----------------------------')
 
@@ -122,7 +130,11 @@ print('-----------------------------')
 
 a = [1, 2, 3]
 b = [4, 5, 6]
-func = lambda x, y: x + y
+
+
+def func(x, y): return x + y
+
+
 for x, y in zip(a, b):  # zip is a object
     print(func(x, y))
 print('-----------------------------')
@@ -130,7 +142,6 @@ for i in map(func, a, b):
     print(i)
 print('-----------------------------')
 
-import copy
 a = [1, 2, 3]
 b = a  # the memory is all the same
 c = copy.copy(a)  # shadow copy: the shadow memory is different

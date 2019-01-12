@@ -1,4 +1,5 @@
 # string's .title .upper .lower functions
+# 这三者不会对原字符串进行修改
 name = 'yI xINg rui'
 print(name)
 print(name.title())
@@ -20,5 +21,5 @@ print(info)
 news = "the ".title() + str(33) + "rd AAAI is coming!"
 print(news + '\n')
 
-# str(), 
+# str(),
 print(str(5+3) + '\n' + str(9-1) + '\n' + str(4*2) + '\n' + str(80//9))

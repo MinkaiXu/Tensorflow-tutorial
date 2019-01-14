@@ -1,11 +1,11 @@
 import numpy as np
+
 a = np.array([[2, 5, 6],
               [9, 5, 7]])  # no dot in array
 print(a.ndim, '\n',
       a.shape, '\n',
       a.size)
 print('---------------------------------------')
-
 
 
 a = np.array([[2, 255, 59],
@@ -22,8 +22,8 @@ print(a)
 a = np.empty((3, 4), dtype=np.int)
 print(a)
 a = np.arange(10, 22).reshape((3, 4))
-print(a)
-a = np.linspace(1, 10, 6).reshape((2,3))
+print(a)  # 返回true和false的矩阵
+a = np.linspace(1, 10, 6).reshape((2, 3))
 # (a,b,c)->(b-a)/(c-1)
 # linspace contain the boundary value
 print(a)
@@ -35,7 +35,7 @@ print(np.dot(a, a))  # multiple the matrix
 print(a.dot(a))  # multiple the matrix
 print(5*np.sin(a))
 print(a == 7)
-a = np.random.random((3,3))
+a = np.random.random((3, 3))
 print(a)
 print(np.max(a), '\n',
       np.sum(a, axis=1), '\n',  # axis=1,hang;axis=0,lie
@@ -44,19 +44,19 @@ print(np.max(a), '\n',
 print('---------------------------------------')
 
 A = np.arange(14, 5, -1).reshape((3, 3))
-print(np.argmin(A))  # print the index of min
-print(np.argmax(A))  # print the index of max
+print(np.argmin(A))  # print the index of min 是‘一个’数
+print(np.argmax(A))  # print the index of max 是‘一个’数
 print(np.median(A))
-print(np.cumsum(A))  # Accumulate
-print(np.diff(A))  # difference
+print(np.cumsum(A))  # 累加
+print(np.diff(A))  # 差分
 print(A)
-print(np.sort(A))
+print(np.sort(A))  # sort 会使原矩阵改变
 print(A.T)  # =np.transpose(A)
 print((A.T).dot(A))
 print(np.clip(A, 5, 9))
 print(np.mean(A, axis=1))
-# axis = 0 : lie
-# axis = 1 : hang
+# axis = 0
+# axis = 1
 print('---------------------------------------')
 
 # the index of array
@@ -65,10 +65,10 @@ print(A)
 print(A[2, 1])  # A[2,1]=A[2][1]
 print(A[:, 1])
 for row in A:
-    print(row)  # print each row in A
+    print(row)  # print each row in A 行
 for clm in A.T:
-    print(clm)  # print each column through the transform of A
-print(A.flatten())
+    print(clm)  # print each column through the transform of A 列
+print(A.flatten()) # 转化为一维的list
 print(A.flatten().shape)
 for a in A.flat:
     print(a)

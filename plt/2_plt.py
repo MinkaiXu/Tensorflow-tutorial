@@ -31,7 +31,7 @@ ax.spines['left'].set_position(('data', 0))
 
 # define plot what functions
 l1, = plt.plot(x, y1, linewidth=1.0, linestyle='--', label='up')
-l2, = plt.plot(x, y2, 'r', label='down')
+l2, = plt.plot(x, y2, 'r', label='down', zorder=1)
 plt.legend(handles=[l2, l1], labels=['aaa', 'bbb'], loc='best')
 
 # add limited line
@@ -48,5 +48,11 @@ plt.annotate(r'$%s+\alpha$' % y0, xy=(x0, y0), xycoords='data',
 # method 2 for adding annotation
 plt.text(-0.5, 1, r'$\lambda{\sum_{i=1}^{yy}}\Omega$',
          fontdict={'size': 16, 'color': 'k'})
+
+# set ticks visible
+for label in ax.get_xticklabels() + ax.get_yticklabels():
+    label.set_fontsize(12)
+    label.set_bbox(dict(facecolor='white', edgecolor='None', alpha=0.7))
+    label.set_zorder(100)
 
 plt.show()
